@@ -2,6 +2,7 @@ package com.Daniels.cursomc.resources;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class CategoriaResource {
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	//para que o parametro do metodo saiba de que o id passado vem do path, passa essa anotação abaixo.
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		Categoria obj = service.Buscar(id);
+		Categoria obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);
 	}
 }
